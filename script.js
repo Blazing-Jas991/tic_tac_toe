@@ -34,8 +34,11 @@ function gameController() {
     const player2marker = document.querySelector("#player-two-marker");
     const submitBtn = document.querySelector(".submit-button");
     const selectionInstruction = document.querySelector(".instruction");
+    const instructionText = selectionInstruction.textContent;
     const playerTurns = document.querySelector(".turns");
     const form = document.querySelector("form");
+    const welcomeMessage = document.querySelector('.welcome-message');
+    const welcomeText = welcomeMessage.textContent;
     
     submitBtn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -54,6 +57,7 @@ function gameController() {
         submitBtn.style.display = 'none'; // when clicked, hide the button
         playerTurns.textContent = `It's ${playerOne.player}'s Turn To Play`;
         selectionInstruction.textContent = "";
+        welcomeMessage.textContent = "";
     });
 
     gameSquares.addEventListener('click', (e) => {
@@ -135,6 +139,8 @@ function gameController() {
         resetButton.remove();
         form.style.display = 'block';
         submitBtn.style.display = 'block';
+        selectionInstruction.textContent = instructionText;
+        welcomeMessage.textContent = welcomeText;
     });
 
     return {gameBoard, playerOne, playerTwo};
