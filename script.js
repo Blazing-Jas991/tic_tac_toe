@@ -133,7 +133,6 @@ function gameController() {
     gameBoard.board.splice(0, gameBoard.board.length, "", "","","","","","","","");
     gameOver = false;
     turn = 1;
-    console.log(gameBoard);
     resetButton.remove();
     form.style.display = 'block';
     submitBtn.style.display = 'block';
