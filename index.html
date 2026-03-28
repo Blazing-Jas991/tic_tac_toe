@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" data-index="">
+<head>
+    <meta charset="UTF-8" data-index="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" data-index="">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" data-index="">
+</head>
+<body class="body">
+  <h2>Welcome To Jas' Tic Tac Toe Game</h2>
+  <p class="instruction">Please input your Name and Marker in order to play.</p>
+  
+  <form>
+    <div class="form-container">
+        <label for="player-one-name">Please Enter The First Player's Name</label>
+        <input type="text" name="playerOne" id="player-one-name" placeholder="Example: John">
+        <label for=player-one-marker>Please Enter The First Player's Marker</label>
+        <input type="text" name =player-1-marker id="player-one-marker" maxlength="1" placeholder="Example: X">
+    </div>
+    <div class="form-container">
+        <label for="player-two-name">Please Enter The Second Player's Name</label>
+        <input type="text" name="playerTwo" id="player-two-name" placeholder="Example: Peter">
+        <label for=player-two-marker>Please Enter The Second Player's Marker</label>
+        <input type="text" name =player-2-marker id="player-two-marker" maxlength="1" placeholder="Example: O">
+    </div>
+  </form>
+
+  <button class="submit-button">Play Game</button>
+  <p class="turns"></p>
+    
+    <div class="game-board">
+        <div class="squares" data-index="0"></div>
+        <div class="squares" data-index="1"></div>
+        <div class="squares" data-index="2"></div>
+        <div class="squares" data-index="3"></div>
+        <div class="squares" data-index="4"></div>
+        <div class="squares" data-index="5"></div>
+        <div class="squares" data-index="6"></div>
+        <div class="squares" data-index="7"></div>
+        <div class="squares" data-index="8"></div>
+    </div>
+  <!-- <p class="result"></p> -->
+    <script src="script.js"></script>
+</body>
+</html>
+

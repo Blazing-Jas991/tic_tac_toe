@@ -1,0 +1,31 @@
+.game-board {
+    display: grid;
+    /* grid-template-rows: repeat(3, 150px); */
+    grid-template-columns: repeat(3, 150px);
+    justify-content: center;
+}
+
+.squares {
+    display: grid;
+    place-items: center;
+    border: 5px solid red;
+    height: 200px;
+    font-size: 64px;
+};
+
+.form-container {
+    display: flex;
+}
+
+.submit-button {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#reset-button {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
