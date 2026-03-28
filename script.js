@@ -19,8 +19,8 @@ let playerOne;
 let playerTwo;
 
 function gameController() {
-    let turn = 1; // set turn to 1
-    let gameOver = false; // 
+    let turn = 1; 
+    let gameOver = false;
     let start = false;
     const resetButton = document.createElement('button');
     resetButton.id = 'reset-button';
@@ -93,7 +93,6 @@ function gameController() {
             ) {
                 gameOver = true;
                 playerTurns.textContent = ` ${playerOne.player} won the game`;
-                return;
         } else if (
             (gameBoard.board[0] === playerTwo.marker && gameBoard.board[3] === playerTwo.marker && gameBoard.board[6] === playerTwo.marker) ||
             (gameBoard.board[1] === playerTwo.marker && gameBoard.board[4] === playerTwo.marker && gameBoard.board[7] === playerTwo.marker) ||
@@ -106,7 +105,6 @@ function gameController() {
             ) {
                 gameOver = true;
                 playerTurns.textContent = ` ${playerTwo.player} won the game`;
-                return;
         };
 
         // The code below checks for a draw in the game, if all the spots are filled and a winner was declared earlier, the game is over and it's a tie
@@ -114,13 +112,11 @@ function gameController() {
             gameOver = true;
             body.appendChild(resetButton);
             playerTurns.textContent = "It's A Tie";
-            return;
         };
 
         // The below code checks if the game is over, if the game is over, it appends the reset button so that players can play another round of the game
         if(gameOver === true) {
             body.appendChild(resetButton);
-            return;
         };
 
     });
