@@ -22,6 +22,9 @@ function gameController() {
     let turn = 1; 
     let gameOver = false;
     let start = false;
+    const playAgain = document.createElement('button');
+    playAgain.id = 'play-again';
+    playAgain.textContent = 'Play Again';
     const resetButton = document.createElement('button');
     resetButton.id = 'reset-button';
     resetButton.textContent = 'Reset Game';
@@ -58,6 +61,7 @@ function gameController() {
         playerTurns.textContent = `It's ${playerOne.player}'s Turn To Play`;
         selectionInstruction.textContent = "";
         welcomeMessage.textContent = "";
+        playAgain.remove();
     });
 
     gameSquares.addEventListener('click', (e) => {
@@ -115,12 +119,14 @@ function gameController() {
         if (gameBoard.board.every(cell => cell !== '')) {
             gameOver = true;
             body.appendChild(resetButton);
+            body.appendChild(playAgain);
             playerTurns.textContent = "It's A Tie";
         };
 
         // The below code checks if the game is over, if the game is over, it appends the reset button so that players can play another round of the game
         if(gameOver === true) {
             body.appendChild(resetButton);
+            body.appendChild(playAgain);
         };
 
     });
@@ -141,6 +147,21 @@ function gameController() {
         submitBtn.style.display = 'block';
         selectionInstruction.textContent = instructionText;
         welcomeMessage.textContent = welcomeText;
+        playAgain.remove();
+    });
+
+    playAgain.addEventListener("click", (e) => {
+        e.preventDefault();
+        playerTurns.textContent = `It's ${playerOne.player}'s Turn To Play`;
+        start = true;
+        for(let child of gameSquares.children) {
+        child.textContent = "";
+        }
+        gameBoard.board.splice(0, gameBoard.board.length, "", "","","","","","","","");
+        gameOver = false;
+        turn = 1;
+        resetButton.remove();
+        playAgain.remove();
     });
 
     return {gameBoard, playerOne, playerTwo};
